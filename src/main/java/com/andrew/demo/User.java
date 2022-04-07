@@ -14,14 +14,13 @@ class User {
     private String lastName;
     private int contactNumber;
 
+    User() {}
 
-//    User() {}
+    User(String firstName, String lastName, int contactNumber) {
 
-    User(String _firstName, String _lastName, int _contactNumber) {
-
-        this.firstName = _firstName;
-        this.lastName = _lastName;
-        this.contactNumber = _contactNumber;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.contactNumber = contactNumber;
     }
 
     public Long getId() {
