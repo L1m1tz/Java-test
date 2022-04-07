@@ -12,16 +12,16 @@ class User {
     private @Id @GeneratedValue Long id;
     private String firstName;
     private String lastName;
-    private String contactNumber;
+    private int contactNumber;
 
 
-    User() {}
+//    User() {}
 
-    User(String firstName, String lastName, String contactNumber) {
+    User(String _firstName, String _lastName, int _contactNumber) {
 
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.contactNumber = contactNumber;
+        this.firstName = _firstName;
+        this.lastName = _lastName;
+        this.contactNumber = _contactNumber;
     }
 
     public Long getId() {
@@ -36,7 +36,7 @@ class User {
         return this.lastName;
     }
 
-    public String getContactNumber(){
+    public int getContactNumber(){
         return this.contactNumber;
     }
 
@@ -44,25 +44,25 @@ class User {
         this.id = id;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirstName(String _firstName) {
+        this.firstName = _firstName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastName(String _lastName) {
+        this.lastName = _lastName;
     }
-    public void setContactNumber(String contactNumber) {
-        this.contactNumber = contactNumber;
+    public void setContactNumber(int _contactNumber) {
+        this.contactNumber = _contactNumber;
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(Object obj) {
 
-        if (this == o)
+        if (this == obj)
             return true;
-        if (!(o instanceof User))
+        if (!(obj instanceof User))
             return false;
-        User user = (User) o;
+        User user = (User) obj;
         return Objects.equals(this.id, user.id) && Objects.equals(this.firstName, user.firstName)
                 && Objects.equals(this.lastName, user.lastName)
                 && Objects.equals(this.contactNumber, user.contactNumber);
@@ -74,7 +74,7 @@ class User {
     }
 
     @Override
-    public String toString() {
+    public String toString(/*User this*/) {
         return "User{" + "id=" + this.id + ", firstName='" + this.firstName + '\'' + ", lastName='" + this.lastName
                 + '\'' + this.contactNumber + '}';
     }
