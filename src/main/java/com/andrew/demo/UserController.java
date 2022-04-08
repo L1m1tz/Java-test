@@ -26,6 +26,7 @@ public class UserController {
         this.assembler =assembler;
     }
 
+    
     @GetMapping("/users")
     CollectionModel<EntityModel<User>> all(){
 
